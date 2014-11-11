@@ -1,0 +1,25 @@
+/* This is fun! */
+/* I love good rendering! */
+svg {
+    shape-rendering: crispEdges;
+}
+.axis text {
+    font: 10px sans-serif;
+}
+g.barU > rect {
+    fill: steelblue;
+}
+g.barD > rect {
+    fill: green;
+}
+g.bar > rect:hover {
+    fill: red;
+}
+.axis path, .axis line {
+    fill: none;
+    stroke: #000000;
+}
+
+.ylines {
+    stroke: #ccc;
+}
