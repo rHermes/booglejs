@@ -219,3 +219,10 @@ pip-log.txt
 # WEB STORM
 ###
 *.idea
+
+
+###
+# CACTUS
+###
+.build
+*.exe

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static '/css/ignreviews.css' %}">
+{% endblock style %}
+
+{% block title %} IGN Reviews{% endblock title %}
+{% block pagetitle %} Analyzing IGN Reviews{% endblock pagetitle %}
+
+{% block content %}
+<h2>Introduction</h2>
+<p>After finding <a href="http://imgur.com/a/sbkOF">this</a> data visualization, I was inspired to do the same thing,
+but using D3.js and crossfilter instead. I extracted the data using python and scrapy. After having done that, I used
+Google Refine to further clean up the dataset. After this I exported it as CVS and it is loaded by the site with D3.
+Whay you are currently seeing is the results of the investigation.</p>
+
+<h2>Score frequency comparison</h2>
+<p>First up was comparing the frequency of scores given by the community versus IGN. It is worth noting that I've
+excluded those entries which did not have a community rating. This leaves us with about 17120 reviews, so it is still a
+good amount of reviews.</p>
+
+<svg id="frequencyComparison"></svg>
+
+    <h2>Reviews by publisher and developer</h2>
+{% endblock content %}
+
+
+{% block scripts %}
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.11/crossfilter.min.js"></script>-->
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script>-->
+
+<script src="{% static '/js/vendor/crossfilter/1.3.11/crossfilter.min.js' %}"></script>
+<script src="{% static '/js/vendor/d3/3.4.13/d3.min.js' %}"></script>
+<script src="{% static '/js/ignreviews.js' %}"></script>
+{% endblock scripts%}
